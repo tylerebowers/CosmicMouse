@@ -1,0 +1,5 @@
+weight of base:
+
+((33.23^2 * 0.3175cm bottom)+(29.12cm^2 * 0.47625cm upper)) * 7.85 g/cm^3 * 0.002204623 lb/g = 0.423 lbs
+
+silicone or rubber pad must be 1.5mm (1.15mm to be level with edge)
