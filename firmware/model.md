@@ -28,7 +28,7 @@ Magnetic Moment (3/16 in dia × 3/16 in height cylinder, N52):
 We can pull out a fixed term $k$, using: $\vec m = |\vec m|\,\hat m$ and $|\vec m| = B_rV/\mu_0$:
 
 ```math
-\vec B = k\,\frac{3\hat r(\hat m\cdot\hat r) - \hat m}{r^3},\qquad
+\vec B = k\,\frac{3\hat r(\hat m\cdot\hat r) - \hat m}{r^3},\quad
 k = \frac{\mu_0|\vec m|}{4\pi} = \frac{B_rV}{4\pi}
 ```
 
@@ -36,3 +36,17 @@ k = \frac{\mu_0|\vec m|}{4\pi} = \frac{B_rV}{4\pi}
 $k = 1.42T \cdot 81.54mm^3 / 4π = 9.21 T \cdot mm^3 = 9214 mT \cdot mm^3$. 
 
 Vector $\vec r$ has 3 components, and one sensor gives 3 measurements, so if $\hat m$ (unit vector of moment) is known, the system can be solved.
+
+
+## 2. Inverting one dipole
+
+A dipole has axial symmetry (in this case, about the vector normal to cylindrical face). Because of this, I will use spherical coordinates, $r$ = distance from the origin (sensor), $a$ angle rotating from the $z$ axis $c = cos(a) = \hat r \cdot \hat z$ (normal to the top face of the sensor), and $\phi$ azimuth rotation about the $z$ axis.
+
+Knowns:
+Sensor position: $\vec{S} = (0, 14.5, 0) mm$  
+Magnet strength: $k = 9214 mT \cdot mm^3$  
+Measured field: $\vec{B} = (0, 5.091, 20.885) mT$ (corresponds to $\vec{S} = (0, 16, 7) mm$)
+
+```math
+\vec B = k\,\frac{3\hat r(\hat m\cdot\hat r) - \hat m}{r^3}, \quad \hat m = \hat z\; \text{(magnet axis is along z)}
+```
