@@ -1,2 +1,3 @@
 *.FCBak
 */.vscode/*
+firmware/src/config.h
