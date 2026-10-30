@@ -3,7 +3,7 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
-	(tags "TMAG5273A2QDBVR ")
+	(tags "TMAG5273A1QDBVR ")
 	(property "Reference" "REF**"
 		(at 0 0 0)
 		(unlocked yes)

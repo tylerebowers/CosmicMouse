@@ -1501,7 +1501,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "space_mouse:TMAG5273A2QDBVR"
+		(symbol "space_mouse:TMAG5273A1QDBVR"
 			(pin_names
 				(offset 0.254)
 			)
@@ -1520,7 +1520,7 @@
 					)
 				)
 			)
-			(property "Value" "TMAG5273A2QDBVR"
+			(property "Value" "TMAG5273A1QDBVR"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1575,7 +1575,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "TMAG5273A2QDBVR"
+			(property "ki_keywords" "TMAG5273A1QDBVR"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1597,7 +1597,7 @@
 					)
 				)
 			)
-			(symbol "TMAG5273A2QDBVR_0_1"
+			(symbol "TMAG5273A1QDBVR_0_1"
 				(polyline
 					(pts
 						(xy 5.08 5.08) (xy 5.08 -15.24)
@@ -5231,7 +5231,7 @@
 		)
 	)
 	(symbol
-		(lib_id "space_mouse:TMAG5273A2QDBVR")
+		(lib_id "space_mouse:TMAG5273A1QDBVR")
 		(at 199.39 109.22 0)
 		(unit 1)
 		(body_style 1)
@@ -5252,7 +5252,7 @@
 				)
 			)
 		)
-		(property "Value" "TMAG5273C2QDBVR"
+		(property "Value" "TMAG5273C1QDBVR"
 			(at 215.9 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5878,7 +5878,7 @@
 		)
 	)
 	(symbol
-		(lib_id "space_mouse:TMAG5273A2QDBVR")
+		(lib_id "space_mouse:TMAG5273A1QDBVR")
 		(at 109.22 109.22 0)
 		(unit 1)
 		(body_style 1)
@@ -5899,7 +5899,7 @@
 				)
 			)
 		)
-		(property "Value" "TMAG5273A2QDBVR"
+		(property "Value" "TMAG5273A1QDBVR"
 			(at 125.73 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6210,7 +6210,7 @@
 		)
 	)
 	(symbol
-		(lib_id "space_mouse:TMAG5273A2QDBVR")
+		(lib_id "space_mouse:TMAG5273A1QDBVR")
 		(at 154.94 109.22 0)
 		(unit 1)
 		(body_style 1)
@@ -6231,7 +6231,7 @@
 				)
 			)
 		)
-		(property "Value" "TMAG5273B2QDBVR"
+		(property "Value" "TMAG5273B1QDBVR"
 			(at 171.45 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)

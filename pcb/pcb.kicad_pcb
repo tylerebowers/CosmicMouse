@@ -2043,7 +2043,7 @@
 		(layer "F.Cu")
 		(uuid "3c0fc577-017e-4f7a-8b52-2443f1746814")
 		(at 162.547368 107.267321 -120)
-		(tags "TMAG5273A2QDBVR ")
+		(tags "TMAG5273A1QDBVR ")
 		(property "Reference" "U4"
 			(at 3.173747 0.531733 240)
 			(unlocked yes)
@@ -2164,7 +2164,7 @@
 			(layer "F.Fab")
 			(uuid "1a655438-96c7-4a4b-8093-c98a07d91d5d")
 		)
-		(fp_text user "TMAG5273B2QDBVR"
+		(fp_text user "TMAG5273B1QDBVR"
 			(at -0.02 -2.25 240)
 			(unlocked yes)
 			(layer "Dwgs.User")
@@ -2605,7 +2605,7 @@
 		(layer "F.Cu")
 		(uuid "5cfee7fe-f11a-4518-b0fa-d87ae1dfa7f6")
 		(at 137.432632 107.232679 120)
-		(tags "TMAG5273A2QDBVR ")
+		(tags "TMAG5273A1QDBVR ")
 		(property "Reference" "U5"
 			(at -3.247242 1.089745 120)
 			(unlocked yes)
@@ -2726,7 +2726,7 @@
 			(layer "F.Fab")
 			(uuid "2b731767-b33b-447b-b583-0b068e23e0d1")
 		)
-		(fp_text user "TMAG5273C2QDBVR"
+		(fp_text user "TMAG5273C1QDBVR"
 			(at -0.020001 -2.25 120)
 			(unlocked yes)
 			(layer "Dwgs.User")
@@ -5750,7 +5750,7 @@
 		(layer "F.Cu")
 		(uuid "c113f2ba-63b6-4ab4-ab6b-738b355b660e")
 		(at 150.02 85.5)
-		(tags "TMAG5273A2QDBVR ")
+		(tags "TMAG5273A1QDBVR ")
 		(property "Reference" "U3"
 			(at 3.18 1 0)
 			(unlocked yes)
@@ -5871,7 +5871,7 @@
 			(layer "F.Fab")
 			(uuid "7542c828-b2af-4a2d-8be6-da5216327844")
 		)
-		(fp_text user "TMAG5273A2QDBVR"
+		(fp_text user "TMAG5273A1QDBVR"
 			(at -0.02 -2.5 0)
 			(unlocked yes)
 			(layer "Dwgs.User")
