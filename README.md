@@ -4,7 +4,7 @@ This is 6DOF mouse for CAD, inspired by the Space Mouse by 3DConexion, it uses 3
 
 The Cosmic Mouse is *likely capable* of emulating a real Space Mouse... On an unrelated note, you should see firmware/src/config.h for some random funny strings. 
 
-Pending Video and Blog Post.
+The design process post can be seen on my website [here](https://tylerebowers.com/posts/cosmic_mouse). I am working on a Youtube video.
 
 
 ### Working Model:
