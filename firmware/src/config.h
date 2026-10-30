@@ -65,6 +65,7 @@ const float CAL_MAX_MOTION = 0.3f; // max perturbation during calibration (mT)
 const float CAL_MAX_RMS = 3.0f; // reject if model can't explain the rest field (diff between inversion method's expectation and known positions, see model.md)
 const float Z_GUESS_MM = 9.0f; // starting guess for knob height above the Hall plane
 const uint32_t RECAL_HOLD_MS = 3000; // hold both buttons this long to recalibrate
+const uint32_t CHORD_MS = 80; // time between button chords (both pressed within this time will block button presses from being sent)
 
 // Solver
 const int LM_ITERS_FRAME = 3; // iterations per frame (warm start from last frame)
