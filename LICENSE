@@ -1,0 +1,8 @@
+Software Source:
+All code in the /firmware directory is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). See firmware/LICENSE for details.
+
+CAD Models:
+All 3D models, schematics, and design files in the /cad directory are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA-4.0). See cad/LICENSE for details.
+
+PCBs:
+All PCBs, schematics, gerbers and project files in the /pcb directory are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC-BY-SA-4.0). See pcb/LICENSE for details.
