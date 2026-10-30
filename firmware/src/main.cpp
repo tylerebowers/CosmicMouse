@@ -310,6 +310,22 @@ void sendHid(const int16_t ax[6], uint8_t buttons){
   }
 }
 
+uint8_t hostButtons() {
+  static bool chord = false;
+  static uint32_t pressedAt[2];
+  static bool wasDown[2];
+  uint8_t out = 0;
+  bool both = btnState[0] && btnState[1];
+  if (both) chord = true;
+  if (chord && !btnState[0] && !btnState[1]) chord = false;   // chord ends when both are released
+  for (int i = 0; i < 2; i++) {
+    if (btnState[i] && !wasDown[i]) pressedAt[i] = millis();
+    wasDown[i] = btnState[i];
+    if (!chord && btnState[i] && millis() - pressedAt[i] >= CHORD_MS) out |= 1 << i;
+  }
+  return out;
+}
+
 //  Main 
 void setup(){
   if (!TinyUSBDevice.isInitialized()) TinyUSBDevice.begin(0);
@@ -346,6 +362,8 @@ void setup(){
   calibrate();           // 1 s settle, then calibrate
 }
 
+static const int16_t ZERO_AXES[6] = {};
+
 void loop(){
   readButtons();
 
@@ -354,11 +372,10 @@ void loop(){
   if (btnState[0] && btnState[1]){
     if (!bothSince) bothSince = millis();
     if (millis() - bothSince >= RECAL_HOLD_MS){
-      int16_t zero[6] = {};
       while (btnState[0] || btnState[1]){
         readButtons();
         ringSpin();
-        sendHid(zero, 0);
+        sendHid(ZERO_AXES, 0); 
         delay(5);
       }
       calibrate();
@@ -404,14 +421,14 @@ void loop(){
   }
 
   // Both buttons together are reserved for recalibration, so don't send that combo to the host
-  uint8_t buttons = (btnState[0] && btnState[1]) ? 0 : (btnState[0] | (btnState[1] << 1));
-  static const int16_t zero[6] = {};
-  sendHid(cal.valid ? ax : zero, buttons);
+  bool bothHeld = btnState[0] && btnState[1];
+  uint8_t buttons = hostButtons();
+  sendHid((cal.valid && !bothHeld) ? ax : ZERO_AXES, buttons);
 
   // LED sleep: any output outside the deadzone or any button counts as activity
   bool active = btnState[0] || btnState[1];
   for (int i = 0; i < 6; i++){
-    active |= cal.valid && ax[i] != 0;
+    active |= cal.valid && !bothHeld && ax[i] != 0;
   }
   updateRingSleep(active);
 
