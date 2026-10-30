@@ -2,9 +2,9 @@
 
 Magnetic Dipole Field:
 
-```math
+$$
 \vec{B}(\vec{r})=\frac{\mu_{0}}{4\pi}\,\frac{3 \hat{r}(\vec{m}\cdot\hat{r})-\vec{m}}{r^{3}}
-```
+$$
 
 - $\mu_0 = 4\pi\cdot10^{-7}\ \text{H/m}$ = permeability of free space
 - $\vec{r}$ = position vector from the dipole center to the observer
@@ -14,11 +14,11 @@ Magnetic Dipole Field:
 
 Magnetic Moment (3/16 in dia × 3/16 in height cylinder, N52):
 
-```math
+$$
 |\vec{m}| = \frac{B_r V}{\mu_0}
 = \frac{1.42\ \text{T}\cdot 8.154\times10^{-8}\ \text{m}^3}{4\pi\cdot10^{-7}\ \text{H/m}}
 \approx 0.0921\ \text{A}\cdot\text{m}^2
-```
+$$
 
 - $B_r = 1.42\ \text{T}$ = residual induction (remanence) of N52
 - $V = \pi\left(\tfrac{4.7\ \text{mm}}{2}\right)^2 \cdot 4.7\ \text{mm} = 81.54\ \text{mm}^3 = 8.154\times10^{-8}\ \text{m}^3$
@@ -27,10 +27,10 @@ Magnetic Moment (3/16 in dia × 3/16 in height cylinder, N52):
 
 We can pull out a fixed term $k$, using: $\vec m = |\vec m|\,\hat m$ and $|\vec m| = B_rV/\mu_0$:
 
-```math
+$$
 \vec B = k\,\frac{3\hat r(\hat m\cdot\hat r) - \hat m}{r^3},\quad
 k = \frac{\mu_0|\vec m|}{4\pi} = \frac{B_rV}{4\pi}
-```
+$$
 
 <!-- (1.42⋅81.54)/(4⋅pi) -->
 $k = 1.42T \cdot 81.54mm^3 / 4π = 9.21 T \cdot mm^3 = 9214 mT \cdot mm^3$. 
@@ -47,7 +47,7 @@ Sensor position: $\vec{S} = (0, 14.5, 0) mm$
 Magnet strength: $k = 9214 mT \cdot mm^3$  
 Measured field: $\vec{B} = (0, 5.091, 20.885) mT$ 
 
-```math
+$$
 \begin{align*}
 & \vec B = k\,\frac{3\hat r(\hat m\cdot\hat r) - \hat m}{r^3}, \quad \hat m = \hat z\; \text{(magnet axis is along z)} \\
 &\vec B \cdot \hat m = \frac{k}{r^3} (3\hat r(\hat m\cdot\hat r) - \hat m) \cdot \hat m = \frac{k}{r^3} (3\hat (\hat m\cdot\hat r)(\hat m\cdot\hat r) - \hat m\cdot \hat m) = \frac{k}{r^3} (3c^2 - 1) \\
@@ -56,39 +56,39 @@ Measured field: $\vec{B} = (0, 5.091, 20.885) mT$
 &\vec B \cdot \hat m =\frac{k}{r^3} (3c^2 - 1); \text{Amount of field along the magnet axis} \\
 &| \vec B | = \frac{k}{r^3} \sqrt{ (3c^2 + 1)}; \text{Magnitude of field} 
 \end{align*}
-```
+$$
 
 **Now to solve for** $c$. Let $u$ be the cosine of the angle between the field and the magnet’s axis.
 
-```math
+$$
 \begin{align*}
 &u = \frac{\vec B\cdot\hat m}{|\vec B|} = \frac{3c^2-1}{\sqrt{3c^2+1}}\;\; \rightarrow \;\; \text{(Let }s = 3c^2 \text{)} \;\; u^2 = \frac{(s-1)^2}{s+1} \\
 &u^2(s+1) = s^2 - 2s + 1 \;\; \rightarrow \;\; s^2 - (2+u^2)s + (1-u^2) = 0
 \end{align*}
-```
+$$
 
 Quadratic formula:
 
-```math
+$$
 s = \frac{(2+u^2) + \sqrt{(2+u^2)^2 - 4(1-u^2) = u^4+8u^2}}{2} = \frac{(2+u^2) + u\sqrt{u^2+8}}{2}
-```
+$$
 We know that the magnet is above the sensor, so $c > 0$. (Durning initialization we can check the sign of the z reading to see if the magnet is flipped up or down; if flipped all readings will be inverted before going into calculations.)
 
-```math
+$$
 c = +\sqrt{\frac{1}{3} \cdot \left[ \frac{(2+u^2) + u\sqrt{u^2+8}}{2} \right]}
-```
+$$
 
 **Now to solve for** $r$.
 
-```math
+$$
 r = \left(\frac{k\sqrt{s+1}}{|\vec B|}\right)^{1/3}= \left(\frac{k\sqrt{3c^2+1}}{|\vec B|}\right)^{1/3}
-```
+$$
 
 Position:
 
-```math
+$$
 \vec s = r\,\left[ sin(a) \frac{(B_x, B_y, 0)}{\sqrt{B_x^2 + B_y^2}+cos(a) \hat z} \right]
-```
+$$
 
 
 
@@ -98,14 +98,14 @@ Measurements from U3: X -2.26mT, Y -5.12mT, Z 15.40mT
 
 Angle $a$: 
 
-```math
+$$
 \begin{align*}
 &| \vec B |  = \sqrt{B_x^2 + B_y^2 + B_z^2} = \sqrt{(-2.26)^2 + (-5.12)^2 + (15.40)^2} = 16.385 mT\\
 &u = \frac{\vec B \cdot \hat m = 15.40}{16.385} = 0.93986\\
 &s = \frac{(2.88334) + 0.93986\sqrt{8.88334}}{2} = 2.84229\\
 &c = -\sqrt{2.84229/3} = -0.97336 \rightarrow \cos^{-1}(0.97336) = 13.25\degree \quad (\vec m = -\vec z) \\
 \end{align*}
-```
+$$
 
 <!-- (15.40/(((−2.26)^2 + (−5.12)^2 + (15.40)^2)^0.5))^2 -->
 <!-- −sqrt(({(2.88334) + 0.93986 sqrt{8.88334}}/{2})/3) -->
@@ -114,23 +114,23 @@ c is negative because the moment points down while $\hat r$ points up. That puts
 
 Distance $r$:
 
-```math
+$$
 r = \left(\frac{9214\sqrt{3.84229}}{16.385}\right)^{1/3} = 10.330 mm
-```
+$$
 
 Direction $\hat r$:
 
-```math
+$$
 \hat r = \frac{\dfrac{r^3}{k}\vec B + \hat m}{3c} = \frac{\frac{10.33^3}{9214}(2.26, 5.12, -15.40) + (0,\ 0,\ -1) = (0.27036, 0.61250, -2.84229)}{3\cdot−0.97336=−2.92008} = (-0.0926, -0.2098, 0.9734)
-```
+$$
 
 Magnet position:
 
 *y is flipped due to U3 sensor's location*
 
-```math
+$$
 \vec M = \vec S + r\,\hat r = (0,\ 14.5,\ 0) + 10.330\times(-0.0926,\ 0.2098,\ 0.9734) = \mathbf{(-0.96,\ 16.67,\ 10.06)\ mm}
-```
+$$
 
 <details>
 
@@ -161,10 +161,10 @@ The next step is to include the other 2 magnets to remove the cross-talk.
 
 Each sensor measures the sum of all three magnet fields, not just its own magnet. While the their influence is small (field strength falls as $1/r^3$) the effect changes as the knob is moved so a simple offset does not work. Fields add as vectors, so the total at sensor $i$ is:
 
-```math
+$$
 \vec B_i = \sum_{j=1}^{3} k\,\frac{3\hat r_{ij}(\hat m\cdot\hat r_{ij}) - \hat m}{r_{ij}^3},
 \qquad \vec r_{ij} = \vec S_i - \vec M_j,\quad r_{ij} = |\vec r_{ij}|,\quad \hat r_{ij} = \vec r_{ij}/r_{ij}
-```
+$$
 
 - $\vec S_i$ = position of sensor $i$
 - $\vec M_j$ = position of magnet $j$
@@ -172,9 +172,9 @@ Each sensor measures the sum of all three magnet fields, not just its own magnet
 
 The single-dipole inversion (sec 2) only works on one magnet's field. So before inverting, the neighboring fields are subtracted:
 
-```math
+$$
 \vec B^{own}_i = \vec B_i - \sum_{j\neq i} k\,\frac{3\hat r_{ij}(\hat m\cdot\hat r_{ij}) - \hat m}{r_{ij}^3}
-```
+$$
 
 The neighbours' positions $\vec M_j$ are needed for this, but they are what we're solving for. Because cross-talk is small (<5%), we can iterate:
 
@@ -192,23 +192,23 @@ Sensors are placed at radius 14.5 mm, however the hall effect element placements
 - 0.68 mm from the pins 1–3 edge, 1.6mm package width = 0.8mm to center, so 0.12 mm from the package center, toward pins 1–3.
 - 0.73 mm below the top of the package (side view). This plane is $z = 0$.
 
-```math
+$$
 \begin{align*}
 &\text{U3 } \vec S_1 = (0, 14.5, 0) + (-0.12, -0.4, 0) = (-0.12, 14.1, 0) \\
 &\text{U4 } \vec S_2 = (12.557, -7.25, 0) + (-0.2864, 0.30392, 0) = (12.271, -6.946, 0) \\
 &\text{U5 } \vec S_3 = (-12.557, -7.25, 0)+ (0.4064, 0.0961, 0) = (-12.151, -7.154, 0) \\
 \end{align*}
-```
+$$
 
 Magnets at rest, at radius 16 mm and height $h$:
 
-```math
+$$
 \begin{align*}
 &\vec M_1 = (0,\ 16,\ h)\\
 &\vec M_2 = (13.852,\ -8.008,\ h)\\
 &\vec M_3 = (-13.852,\ -8.008,\ h)\\
 \end{align*}
-```
+$$
 
 This is a lot to do by hand, so instead it can be done in Python:
 
@@ -273,39 +273,39 @@ Solving each magnet on its own lets the three positions drift apart. The magnets
 
 Unknowns: (the knob pose)
 
-```math
+$$
 \mathbf p = (x, y, z, \phi, \theta, \psi)
-```
+$$
 
 - $x, y, z$ = position of the knob center.
 - $\phi, \theta, \psi$ = roll, pitch, yaw
 
 Magnet positions:
 
-```math
+$$
 \begin{align*}
 &\vec q_1 = (0, 16, 0)  &\text{Above U3}\\
 &\vec q_2 = (13.852, -8.008, 0)  &\text{Above U4}\\
 &\vec q_3 = (-13.852, -8.008, 0)  &\text{Above U5}
 \end{align*}
-```
+$$
 
 For a given pose, the magnets and their axis in the board frame are:
 
-```math
+$$
 \vec M_j(\mathbf p) = \mathbf R(\phi, \theta, \psi)\vec q_j + \vec T \hat m_j
-```
+$$
 
 Residuals:
 
-```math
+$$
 \vec B^{model}_i(\mathbf p) = \sum_{j=1}^{3} k\,\frac{3\hat r_{ij}(\hat m\cdot\hat r_{ij}) - \hat m}{r_{ij}^3},
 \qquad \vec r_{ij} = \vec S_i - \vec M_j(\mathbf p)
-```
+$$
 
 Stack the differences into one vector of 9 residuals:
 
-```math
+$$
 \mathbf r(\mathbf p) = 
 \begin{bmatrix} 
 \vec B^{model}_1 - \vec B_1 \\ 
@@ -313,14 +313,14 @@ Stack the differences into one vector of 9 residuals:
 \vec B^{model}_3 - \vec B_3 
 \end{bmatrix}
 \quad (9 \times 1)
-```
+$$
 
 The best pose minimizes the sum of squared residuals:
 
-```math
+$$
 \mathbf p^* = \arg\min_{\mathbf p}\ F(\mathbf p),
 \quad F(\mathbf p) = \tfrac12\,\mathbf r(\mathbf p)^\mathsf{T}\mathbf r(\mathbf p) = \frac{1}{2} \sum_{i=1}^{3} \left\| \vec{B}_{i, \text{pred}}(\mathbf{p}) - \vec{B}_{i, \text{measured}} \right\|^2
-```
+$$
 
 There are 9 equations and 6 unknowns, so the system is over-determined. (2 magnets and 2 sensors could be used) The 3 extra equations average out noise and the leftover residual shows how well the model fits.
 
@@ -329,9 +329,9 @@ $\mathbf r(\mathbf p)$ is non-linear (because of $1/r^3$, the unit vectors and t
 $\mathbf J$ (the Jacobian) says how each of the 9 readings change when each of the 6 pose values change. It is computed numerically: nudge each pose value by a tiny amount $\varepsilon$ and see how the
 residuals change. The update step is:
 
-```math
+$$
 \Delta\mathbf p = \mathbf J^\mathsf{T}\vec r \big(\mathbf J^\mathsf{T}\mathbf J + \lambda\,\mathrm{diag}(\mathbf J^\mathsf{T}\mathbf J)\big)^{-1} 
-```
+$$
 
 - Small $\lambda$: Gauss–Newton step, fast compared to large $\lambda$.
 - Large $\lambda$: this is a short step similar to gradient descent.
