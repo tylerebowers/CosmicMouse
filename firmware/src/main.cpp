@@ -60,7 +60,11 @@ bool readSensors(float B[9]){ // board-frame field (mT), polarity-corrected
     float v[3];
     for (int i = 0; i < 3; i++){
       uint8_t hi = Wire1.read(), lo = Wire1.read();
-      v[i] = (int16_t)((hi << 8) | lo) * RANGE_MT / 32768.0f;
+      int16_t raw = (int16_t)((hi << 8) | lo);
+      if (raw == 32767 || raw == -32768){
+        return false;   // saturated: skip this frame
+      }
+      v[i] = raw * RANGE_MT / 32768.0f;
     }
     float x = AXIS_SX * v[0], y = AXIS_SY * v[1], z = AXIS_SZ * v[2];
     float c = cosf(radians(PHI_DEG[s])), sn = sinf(radians(PHI_DEG[s]));
@@ -353,11 +357,12 @@ void setup(){
   Wire1.setSCL(7);             // D4 / D5
   Wire1.begin();
   Wire1.setClock(400000);
-  for (uint8_t a : ADDR){
+  for (uint8_t a : ADDR) {
     wr(a, 0x08, 0x01);   // INT_CONFIG_1: MASK_INTB (INT tied to GND)
     wr(a, 0x00, 0x14);   // DEVICE_CONFIG_1: MAG_TEMPCO = 0%, CONV_AVG = 32x
     wr(a, 0x02, 0x70);   // SENSOR_CONFIG_1: enable X, Y, Z
-    wr(a, 0x01, 0x12);   // DEVICE_CONFIG_2: low noise, continuous mode
+    wr(a, 0x03, 0x03);   // SENSOR_CONFIG_2: X_Y_RANGE = 1, Z_RANGE = 1 -> ±80 mT (x1 parts)
+    wr(a, 0x01, 0x12);   // DEVICE_CONFIG_2: low noise, continuous mode (last: starts conversions)
   }
   calibrate();           // 1 s settle, then calibrate
 }

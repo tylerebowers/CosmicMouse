@@ -40,7 +40,7 @@ const int8_t AXIS_SIGN[6] = {1, -1, -1, 1, -1, -1};
 
 // Hardware
 const uint8_t ADDR[3] = {0x35, 0x22, 0x78}; // U3 (A2), U4 (B2), U5 (C2)
-const float RANGE_MT = 133.0f; // x2 parts, low range
+const float RANGE_MT = 80.0f; // x1 parts, high range
 const uint8_t BTN[2] = {27, 28}; // SW1 = D1 (GPIO27), SW2 = D2 (GPIO28); pressed = LOW
 const uint32_t DEBOUNCE_MS = 20; // for buttons
 const uint8_t RING_PIN = 26, RING_LEDS = 8; // D0 = GPIO26
